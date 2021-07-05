@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+</head>
+<body>
+    <h1 id="ht1">Vending Machine </h1>
+    <div class="container" id="item">
+        <div class="row">
+          <div class="col-sm">
+            Item
+          </div>
+          <div class="col-sm">
+            Prize
+          </div>
+          <div class="col-sm">
+            Code
+          </div>
+        </div>
+    </div>
+
+     <div class="btnGroup">
+         <div class="alpha">
+             Add Money
+         </div>
+        <div>
+            <button class="btn1" id="1">1</button>
+            <button class="btn1" id="2">2</button>
+            <button class="btn1" id="3">5</button>
+
+        </div>
+        <div>
+            <button class="btn1" id="4">10</button>
+            <button class="btn1" id="5">20</button>
+            <button class="btn1" id="6">50</button>
+
+        </div>
+        <div>
+            <button class="btn1" id="7">100</button>
+            <button class="btn1" id="8">200</button>
+            <button class="btn1" id="9">500</button>
+
+        </div>
+        <div class="span">
+            <p>
+                <span id="display">0</span> 
+            <p>
+        </div>
+     </div>
+
+     <div class="red">
+        <span>Enter Code of your item: </span>
+        <input type="text" id="cod" name="code"><br>
+    </div>
+    
+    <script src="script.js"></script>
+    <script src="addmount.js"></script>
+</body>
+</html>
