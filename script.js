@@ -137,8 +137,11 @@ fetch("./obj1.json")
                 document.getElementById("text2").value='';
                 document.getElementById("display1").innerHTML="Alert: Insufficient amount";
                 document.getElementById("flex").style.display="flex"
+                if(count1>0)
+                {
                 document.getElementById("col2").innerHTML=`Collect your money: ${count1}`;
                 document.getElementById("collect1").style.display="flex"
+                }
                 count1=0;
                 document.getElementById("display").innerHTML=count1;
                }
