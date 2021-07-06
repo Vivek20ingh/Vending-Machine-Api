@@ -87,7 +87,8 @@
 
   .container1{ 
      text-align: center;
-    margin: 10px;
+    margin: 0px;
+    margin-left: 5%;
     border:1px solid black;
     width: 212px;
     height: 80px;

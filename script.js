@@ -63,12 +63,12 @@ fetch("./obj2.json")
                 let z1= document.getElementById("collect1").style.display;
                 if(z1=="flex")
                 {
-                    document.getElementById("display1").innerHTML="Collect You item";
+                    document.getElementById("display1").innerHTML="Alert: Collect You item";
                     document.getElementById("flex").style.display="flex"
                 }
                 else if(count1+vec[a-1]>500)
                 {
-                    document.getElementById("display1").innerHTML="You can't add more than 500";
+                    document.getElementById("display1").innerHTML="Alert: You can't add more than 500 rupee ";
                     document.getElementById("flex").style.display="flex"
                 }
                 else 
@@ -113,17 +113,21 @@ fetch("./obj1.json")
             let x=Number(inputVal);
             let p=String(inputVal);
             // console.log(result)
-
-            
-         
             if(!inputVal)x=-1;
-            if(x>=0 && x<=9 && p.length==2)
+
+            let z1= document.getElementById("collect1").style.display;
+            if(z1=="flex")
+            {
+                document.getElementById("display1").innerHTML="Alert: Collect You item";
+                document.getElementById("flex").style.display="flex"
+            }
+            else if(x>=0 && x<=9 && p.length==2)
             {
                if(result[count[x]]<=count1)
                {
                 let z=result[count[x]];        
-                        
-                document.getElementById("col2").innerHTML=`Collect your: ${count[x]} and amount: ${count1-z}`;
+
+                document.getElementById("col2").innerHTML=`Collect your: ${count[x]} and exchnage: ${count1-z}`;
                 document.getElementById("collect1").style.display="flex"
                 count1=0;
                 document.getElementById("display").innerHTML=count1;
@@ -131,14 +135,18 @@ fetch("./obj1.json")
                }
                else{
                 document.getElementById("text2").value='';
-                document.getElementById("display1").innerHTML="Transaction fail due to insufficient amount";
+                document.getElementById("display1").innerHTML="Alert: Insufficient amount";
                 document.getElementById("flex").style.display="flex"
+                document.getElementById("col2").innerHTML=`Collect your money: ${count1}`;
+                document.getElementById("collect1").style.display="flex"
+                count1=0;
+                document.getElementById("display").innerHTML=count1;
                }
             }
             else
             {
                 document.getElementById("text2").value='';
-                document.getElementById("display1").innerHTML="Please enter correct code";
+                document.getElementById("display1").innerHTML="Alert: Please enter correct code";
                 document.getElementById("flex").style.display="flex"
             }
         }
