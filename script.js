@@ -121,35 +121,8 @@ fetch("./obj1.json")
             {
                if(result[count[x]]<=count1)
                {
-                let z=result[count[x]];
-                // console.log(count[x]);
-                console.log(r);
-                let p1=count1-z;
-                let r1=Object.keys(r);
-                console.log(r1.length)
-                console.log(r1)
-                let res=0;
-                for (let i=r1.length-1;i>=0;i--)
-                {
-                    console.log(r1[i]);
-                    let y=r1[i];
-                    while(p1>=y && r[y]>0 )
-                    {
-                        p1-=y;
-                        r[y]--;
-                        if(y=="50")
-                        {
-                            res=1;
-                        }
-                    }
-                    console.log(r[r1[i]]);
-                }
-            
-                console.log(r);
-                console.log(result)
-                console.log(p1);
-                
-
+                let z=result[count[x]];        
+                        
                 document.getElementById("col2").innerHTML=`Collect your: ${count[x]} and amount: ${count1-z}`;
                 document.getElementById("collect1").style.display="flex"
                 count1=0;
