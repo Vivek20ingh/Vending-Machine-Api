@@ -44,6 +44,7 @@ fetch("./obj1.json")
 
 var count1 = 0;
 const vec=[1,2,5,10,20,50,100,200,500]
+let check=0;
 
 fetch("./obj2.json")
     .then((res)=> 
@@ -59,10 +60,6 @@ fetch("./obj2.json")
         {
             var btn1=document.getElementById(a);
             btn1.onclick = function () {
-                const x=vec[a-1];
-                result[x]+=5;
-                r=result;
-                console.log(result[x]);
                 let z1= document.getElementById("collect1").style.display;
                 if(z1=="flex")
                 {
@@ -76,6 +73,15 @@ fetch("./obj2.json")
                 }
                 else 
                 {
+                    if(check==1)
+                    {
+                        result=r;
+                    }
+                    const x=vec[a-1];
+                    result[x]++;
+                    r=result;
+                    check=1;
+                    // console.log(result[x]);
                     document.getElementById("flex").style.display="none"
                     count1+=vec[a-1];
                     document.getElementById("display").innerHTML=count1;
@@ -90,37 +96,6 @@ fetch("./obj2.json")
         console.log("error");
     })
 
- 
-
-   
-  
-// for(let a=1;a<=9;a++)
-// {
-//     var btn1=document.getElementById(a);
-//     btn1.onclick = function () {
-//         let z1= document.getElementById("collect1").style.display;
-//         // console.log(z1)
-
-//         if(z1=="flex")
-//         {
-//             document.getElementById("display1").innerHTML="Collect You item";
-//             document.getElementById("flex").style.display="flex"
-//         }
-//         else if(count1+vec[a-1]>500)
-//         {
-//         document.getElementById("display1").innerHTML="You can't add more than 500";
-//         document.getElementById("flex").style.display="flex"
-//         }
-//         else 
-//         {
-//             document.getElementById("flex").style.display="none"
-//             count1+=vec[a-1];
-//             document.getElementById("display").innerHTML=count1;
-//         }
-//     }
-
-// }
-    
 
 fetch("./obj1.json")
     .then((res)=> 
@@ -139,7 +114,7 @@ fetch("./obj1.json")
             let p=String(inputVal);
             // console.log(result)
 
-            console.log(r);
+            
          
             if(!inputVal)x=-1;
             if(x>=0 && x<=9 && p.length==2)
@@ -148,6 +123,33 @@ fetch("./obj1.json")
                {
                 let z=result[count[x]];
                 // console.log(count[x]);
+                console.log(r);
+                let p1=count1-z;
+                let r1=Object.keys(r);
+                console.log(r1.length)
+                console.log(r1)
+                let res=0;
+                for (let i=r1.length-1;i>=0;i--)
+                {
+                    console.log(r1[i]);
+                    let y=r1[i];
+                    while(p1>=y && r[y]>0 )
+                    {
+                        p1-=y;
+                        r[y]--;
+                        if(y=="50")
+                        {
+                            res=1;
+                        }
+                    }
+                    console.log(r[r1[i]]);
+                }
+            
+                console.log(r);
+                console.log(result)
+                console.log(p1);
+                
+
                 document.getElementById("col2").innerHTML=`Collect your: ${count[x]} and amount: ${count1-z}`;
                 document.getElementById("collect1").style.display="flex"
                 count1=0;
