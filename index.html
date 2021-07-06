@@ -17,7 +17,7 @@
             Item
           </div>
           <div class="col-sm">
-            Prize
+            Price
           </div>
           <div class="col-sm">
             Code
@@ -25,7 +25,7 @@
         </div>
     </div>
 
-     <div class="btnGroup">
+     <div class="btnGroup" id="amountmore">
          <div class="alpha">
              Add Money
          </div>
@@ -48,18 +48,32 @@
 
         </div>
         <div class="span">
-            <p>
-                <span id="display">0</span> 
-            <p>
+            <span id="display">0</span> 
+        </div>
+        <div class="span1" id="flex">
+            <span id="display1">0</span> 
         </div>
      </div>
 
-     <div class="red">
-        <span>Enter Code of your item: </span>
-        <input type="text" id="cod" name="code"><br>
+     <div class="input-group mb-3 red">
+        <span class="half">Enter code of your Item:</span>
+       <input type="text" class="form-control" id="text2" placeholder="code"/>
+       <div class="input-group-append">
+         <button class="btn btn-outline-secondary" type="button" id="add">Button</button>
+       </div>
+     </div>
+
+    <div class="collect" id="collect1">
+        <div class="container1" id="item2">
+            <span id="col2">item</span>
+       </div>
+       <div class="btnx">
+           <button class="hyt" id="hide">Collect You item</button>
+       </div>
     </div>
+
     
     <script src="script.js"></script>
-    <script src="addmount.js"></script>
+    
 </body>
 </html>
